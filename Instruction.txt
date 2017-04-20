@@ -1,0 +1,17 @@
+Instruction:
+
+We have attached database and code file in zip folder. 
+1. Create database
+2. Install sql file which we have attached in zip folder.
+3. Make changes in database.php file regarding to database configuration. (If database name is "employee" , then no need to change anything in this file.) 
+4. Make new folder in xampp/htdocs folder and run code.
+
+Employee report you can see from here
+http://localhost/employeepractical/ 
+
+Here you can search all details and sort here all column.
+
+When you click on "Add new" button it will open new page. From there you can create new employee.
+
+You can see chart from here
+http://localhost/employeepractical/employee/chart
