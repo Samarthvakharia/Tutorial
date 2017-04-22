@@ -195,5 +195,65 @@ class Employee extends CI_Controller
 		$data['chart_detail'] = $this->search->chart(); // get Department 
 		$this->load->view('employee/chart', $data);
 	}
+	/*
+	function ajax_addnew()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+		$this->form_validation->set_rules('category_name','Category Name', 'required');
+		$this->form_validation->set_rules('parent_category_id','Parent Category', 'required');
+		
+		if ($this->form_validation->run() == FALSE) {
+			echo validation_errors();
+		} 
+		else {
+			
+			$input_name = 'category_images';
+			$path = './uploads/';
+			if($_FILES[$input_name]['name'] != "")
+			{
+				$config['upload_path']     = $path;
+				$config['allowed_types'] = 'jpg|jpeg|png|gif';
+				//$config['allowed_types']   = '*';
+				$config['remove_spaces']   = true;
+				$config['encrypt_name']    = true;
+				$config['max_width']       = '';
+				$config['max_height']      = '';
+		
+				$this->load->library('upload', $config);
+				$this->upload->initialize($config);	
+		
+				if (!$this->upload->do_upload($input_name))
+				{
+					
+					$error = array('error' => $this->upload->display_errors());
+					echo $path.'<br />';
+					print_r($error);			
+				}
+				else
+				{
+					$image = $this->upload->data();
+					$image['file_name'];
+				}
+			}
+			$category_row = $this->common->get_row(array('category_name' => $this->input->post('category_name')), 'category', 'category_name, category_id');
+			if(isset($category_row) && count($category_row))
+			{
+				$message = 'Duplicate';
+			}
+			else
+			{
+				$insert_data = array(
+				   'category_name'      => $this->input->post('category_name'),
+				   'category_images'    => $image['file_name'],
+				   'parent_category_id' => $this->input->post('parent_category_id'),
+				   'is_parent'          => $this->input->post('is_parent'),
+				);
+				$this->common->insert($insert_data,'category'); // insert data
+				$message = 'Success';
+			}
+		}
+		echo $message;
+	}
+	*/
 }
 ?>
