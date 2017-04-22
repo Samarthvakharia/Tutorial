@@ -32,6 +32,36 @@ $(document).ready(function()
 		});
 	});
 	$('#employee_table').DataTable();
+	/*
+	$('#submit').click(function(e) {
+		e.preventDefault();
+		var data = new FormData( $("#catgory_form")[0]); // <-- 'this' is your form element		
+		$.ajax({
+			url: 'ajax_addnew',
+			data: data,
+			cache: false,
+			contentType: false,
+			processData: false,
+			type: 'POST',
+			success: function(data) {
+				
+				if(data == 'Success')
+				{
+					window.location.href = "listing";
+					//$('.message').html('<div class="alert alert-danger">Category Already Exit.<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></div>');
+				}
+				else if(data == 'Duplicate')
+				{
+					window.location.href = "addnew";
+					$('.message').html('<div class="alert alert-danger">Category Already Exit.<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></div>');
+				}
+				//window.location.href = "listing";
+			}
+
+		});
+		return false;
+	});
+	*/
 });
 function confirmDialog() 
 {
